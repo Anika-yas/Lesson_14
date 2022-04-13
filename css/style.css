@@ -315,7 +315,7 @@ body{
     padding: 100px 0 354px;
 }
 .who-we-are__subtitle {
-    color: #F5F5F5;
+    color: #adaaaa;
     margin: 0 0 33px 0;
 }
 .subtitle {
@@ -377,19 +377,12 @@ body{
     margin: 0 0 68px 0;
 }
 
-.subtitle {
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 2;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    align-items: center;
-    padding: 0 0 0 33px;
-    position: relative;
-}
 .block-heading__subtitle{
     color: #5D62B5;
     margin: 0 0 33px 0;
+}
+.block-heading__subtitle:last-child{
+    margin: 0;
 }
 .block-heading__subtitle::before{
     content: "";
@@ -400,12 +393,6 @@ body{
     top:-1px;
     left: 0;
 }
-.title {
-    font-weight: 900;
-    font-size: 36px;
-    line-height: 1.17;
-}
-
 .item-our-promise {
     display: flex;
     flex-wrap: wrap;
@@ -527,19 +514,21 @@ body{
     margin: 0 0 78px 0;
 }
 .our-services__row{
-    margin: 0 0 66px 0;
 }
+/* намеренно исрользовала gap и % (высчитала сколько процентов ширины 1020рх приходится на 24рх,  вычла и пересчитала сколько будет процентов ширина карточки (вместо 33%) для трех карточек в ряду*/
+
 .item-our-services{
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 24px;  
     position: relative;
     z-index: 2;
 }
 .item-our-services__column {
     display: flex;
     flex-direction: column;
-    flex: 0 1 31.764%;
+    flex: 1 1 31.764%;
+    align-items: center;
     background: #FFFFFF;
     border-radius: 20px;
     padding: 50px 44px 50px 43px;
@@ -551,9 +540,10 @@ body{
 
 }
 .item-our-services__picture {
-    /* flex: 0 0 63px;  - в этом случае не работает. Не понимаю почему картинка не фиксируется размером 63рх (в примере item-our-promise__picture все работает), а здесь картика растягивается, хотя абсолютно аналогичные */
+    flex: 0 0 63px; 
+    justify-content: center;
+    align-items: flex-end;
     width: 63px;
-    height: 63px;
     align-self: center;
     margin: 0 0 33px 0;
     overflow: hidden;
@@ -580,6 +570,7 @@ body{
     padding: 9px 25px;
 }
 .our-services__button-box{
+    margin: 66px 0 0 0;
     text-align: center;
 }
 
