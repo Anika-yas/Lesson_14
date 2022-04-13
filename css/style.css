@@ -1,0 +1,805 @@
+/* --------------------------обнуление---------------------------- */
+@import url(null.css);
+
+/* ----------------------подключение шрифтов---------------------- */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:regular,500,700,900display=swap');
+
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    background: #F5F5F5;
+}
+
+/* ----------------------оболочка--------------------- */
+.wrapper {
+    overflow: hidden;
+	min-height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+/* ----------------------container--------------------- */
+
+[class*="__container"] {
+    max-width: 1020px;
+    margin: 0 auto;
+}
+
+
+/* ----------------------header--------------------- */
+.header{
+    padding: 26px 0 0;
+    position: relative;
+    z-index: 2;
+}
+.header__container {
+}
+.header__column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 27px;
+}
+/* ---------------------- header__top --------------------- */
+
+.header__top-row {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    justify-content: space-between;
+}
+
+.top__logo {
+    flex: 0 0 174px;
+    height: 41px;
+}
+.top__img {
+    width: 100%;
+}
+.top__contacts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -15px;
+    row-gap: 20px;
+}
+.top__info {
+    padding: 0 15px 0 49px;
+    font-size: 12px;
+    line-height: 1.83;
+    align-items: center;
+    letter-spacing: 0.15px;
+    color: #FFFFFF;
+}
+.top__info_time{
+    position: relative;
+}
+.top__info_time::before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    background: url(../img/icons/header/time.svg) 0px 0 / 24px 24px no-repeat;
+    top: 0;
+    left: 15px;
+}
+.top__title {
+    font-weight: 700;
+}
+.top__subtitle {
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.top__info_phone {
+    position: relative;
+    padding: 0 15px 0 49px;
+}
+.top__info_phone::before {
+    position: absolute;
+    content: "";
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    background: url(../img/icons/header/phone_24px.svg) 0px 0 / 24px 24px no-repeat;
+    top: 0;
+    left: 15px;
+}
+.top__box-button{
+    padding: 0 15px;
+}
+.button {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 2;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.15px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background: #F2726F;
+    border-radius: 8px;
+    padding: 9px 34px;
+    transition: 0.3s;
+}
+.button:hover{
+    background: #ec4a47;
+    transform: translate(0, 1.5px);
+}
+.top__button {
+    padding: 9px 34px;
+}
+/* ---------------------- header__menu --------------------- */
+.header__menu-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+.menu {
+
+}
+.menu__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 37px;
+    padding: 0 10px;
+}
+.menu__item {
+}
+.menu__link, 
+.sublist__link {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.57;
+    text-align: center;
+    letter-spacing: 0.15px;
+    color: #000000;
+}
+
+.menu__link_expand {
+    position: relative;
+    padding: 0 20px 0 0;
+}
+
+.menu__link_expand::after {
+    position: absolute;
+    content: "";
+    background: url(../img/icons/header/expand.svg) 0 0 / 16px no-repeat;
+    width: 16px;
+    height: 16px;
+    top: 1px;
+    right: 0px;
+}
+.menu__item:hover .menu__link{
+    color: #F2726F;
+}
+.menu__item_expand{
+    position: relative;
+}
+.menu__sublist{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    position: absolute;
+    top: 100%;
+    left: -15px;
+    padding: 15px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    opacity: 0;
+    transition: 0.3s;
+}
+.sublist__link{
+}
+.sublist__link:hover{
+    color: #F2726F;
+}
+.menu__item_expand:hover .menu__sublist{
+    opacity: 1;
+}
+.menu__shoping {
+    padding: 0 10px;
+    display: flex;
+    margin: 0 -11px;
+}
+.menu__search {
+    padding: 8px 11px;
+    flex: 0 0 46px;
+    height: 40px;
+}
+.menu__img {
+    width: 100%;
+    height: 100%;
+}
+.menu__cart {
+    position: relative;
+    padding: 8px 11px;
+    flex: 0 0 46px;
+    height: 40px;
+}
+.cart {
+}
+.cart__img {
+    width: 100%;
+    height: 100%;
+}
+.cart__number {
+    position: absolute;
+    top: 1px;
+    right: 3px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #F2726F;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 2.2px;
+    padding: 7px 5px;
+    text-align: center;
+    letter-spacing: 0.15px;
+    color: #FFFFFF;
+}
+
+/* ----------------------main--------------------- */
+.main {
+    flex: 1 1 auto;
+}
+
+/* --------------------------premier-dog---------------- */
+
+
+.premier-dog{
+    position: relative;
+    background: url(../img/main/Premier-dog.png) center / cover no-repeat;
+}
+.premier-dog_margin{
+    margin: -150px 0 0;
+}
+.premier-dog__box{
+    padding: 280px 0 312px 0;
+}
+.premier-dog__title {
+    font-weight: 900;
+    font-size: 56px;
+    color: #FFFFFF;
+    margin: 0 0 48px 0;
+    max-width: 583px;
+} 
+
+
+/* --------------------------------who-we-are----------------- */
+
+.who-we-are {
+    position: relative;
+    z-index: 3;
+}
+.who-we-are__container {
+    background: #5D62B5;
+    border-radius: 40px;
+    margin: 0 auto 230px;
+}
+.who-we-are__box {
+    max-width: 846px;
+    margin: -80px auto 0;
+    position: relative;
+}
+.who-we-are__box::before {
+    content: "";
+    background: url(../img/icons/who-we-are/Blob.svg) left top / 100% no-repeat;
+    width: 514px;
+    height: 370px;
+    position: absolute;
+    bottom: -27px;
+    left: -36px;
+}
+.who-we-are__box::after {
+    content: "";
+    background: url(../img/icons/who-we-are/Stylize.svg) left top / 100% no-repeat;
+    width: 201px;
+    height: 317px;
+    position: absolute;
+    top: -109px;
+    right: -164px;
+}
+.who-we-are__content {
+    position: relative;
+    padding: 100px 0 354px;
+}
+.who-we-are__subtitle {
+    color: #F5F5F5;
+    margin: 0 0 33px 0;
+}
+.subtitle {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    align-items: center;
+    padding: 0 0 0 33px;
+    position: relative;
+}
+.subtitle::before{
+    content: "";
+    background: url(../img/icons/who-we-are/mark.svg) 0 0 no-repeat;
+    width: 17px;
+    height: 20px;
+    position: absolute;
+    top:-1px;
+    left: 0;
+}
+.who-we-are__title {
+    color: #FFFFFF;
+    max-width: 583px;
+    margin: 0 0 36px 0;
+}
+.title {
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 1.17;
+}
+.who-we-are__text {
+    line-height: 1.5;
+    letter-spacing: 0.15px;
+    color: #F5F5F5;
+}
+.who-we-are__image {
+    position: absolute;
+    bottom: -120px;
+    left: 0;
+    border-radius: 40px;
+    overflow: hidden;
+    width: 846px;
+    height: 420px;
+}
+.who-we-are__img {
+    width: 100%;
+    height: 100%;
+}
+
+/* ------------------------- our-promise   ---------------- */
+
+.our-promise {
+}
+.our-promise__container {
+    margin: 0 auto 120px;
+}
+.our-promise__block-heading{
+    margin: 0 0 68px 0;
+}
+
+.subtitle {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    align-items: center;
+    padding: 0 0 0 33px;
+    position: relative;
+}
+.block-heading__subtitle{
+    color: #5D62B5;
+    margin: 0 0 33px 0;
+}
+.block-heading__subtitle::before{
+    content: "";
+    background: url(../img/icons/subtitle-mark.svg) 0 0 no-repeat;
+    width: 17px;
+    height: 20px;
+    position: absolute;
+    top:-1px;
+    left: 0;
+}
+.title {
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 1.17;
+}
+
+.item-our-promise {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 22px;
+    margin: 0 -12px;
+}
+.item-our-promise__row {
+    display: flex;
+    flex: 0 1 33.333%;
+    gap: 23px;
+    padding: 0 12px;
+}
+.item-our-promise__picture {
+    display: flex;
+    flex: 0 0 63px;
+    align-self: flex-start;
+    height: 63px; 
+}
+.item-our-promise__img {
+    width: 100%;
+    height: 100%;
+}
+.item-our-promise__content {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 1 235px;
+}
+.item-our-promise__title {
+    font-weight: 900;
+    font-size: 19px;
+    line-height: 1.37;
+    color: #F2726F;
+    margin: 0 0 20px 0;
+}
+.item-our-promise__text {
+    line-height: 1.5;
+    letter-spacing: 0.15px;
+    color: #4B4B4B;
+}
+
+/* --------------------------------------------*/
+
+
+/* ------------------- nemo  -------------------------*/
+
+
+.nemo{
+    background: #29C3BE;
+    position: relative;
+    z-index: 5;
+    overflow: hidden;
+}
+.nemo::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../img/icons/nemo/Blob2.svg) -115px -108px no-repeat, url(../img/icons/nemo/Circles.svg) 0  top no-repeat;
+    width: 500px;
+    height: 440px;
+}
+.nemo::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background:  url(../img/icons/nemo/Line.svg) -90px 0 no-repeat; 
+    width: 621px;
+    height: 393px;
+    z-index: 1;
+}
+.nemo__box{
+    padding: 112px 0 169px 0;
+    position: relative;
+}
+.nemo__content {
+    position: relative;
+    max-width: 411px;
+    margin-left: auto;
+    margin-right: 0;
+    z-index: 2;
+}
+.nemo__title {
+    color: #FFFFFF;
+    margin: 0 0 51px ;
+}
+.nemo__dog-image{
+    position: absolute;
+    bottom: -34px;
+    left: -210px;
+    z-index: 1;
+}
+.nemo__ball-image{
+    position: absolute;
+    right: -150px;
+    z-index: 4;
+}
+.nemo__button{}
+
+
+/* ------------------- our-services  -------------------------*/
+
+.our-services{
+    position: relative;
+    padding: 110px 0 122px;
+    z-index: 2;
+}
+.our-services::after{
+    content: "";
+    position: absolute;
+    background: url(../img/icons/our-services/Blob.svg) 0 0 no-repeat;
+    top: -570px;
+    right: -900px;
+    width: 1430px;
+    height: 1340px;
+    z-index: 1;
+}
+.our-services__block-heading {
+    margin: 0 0 78px 0;
+}
+.our-services__row{
+    margin: 0 0 66px 0;
+}
+.item-our-services{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    position: relative;
+    z-index: 2;
+}
+.item-our-services__column {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 31.764%;
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 50px 44px 50px 43px;
+    transition: 0.3s;
+}
+.item-our-services__column:hover {
+    box-shadow:  0px 16px 24px 0px #26262633, 0px 8px 16px 0px #2626263D;
+    transform: scale(1.05);
+
+}
+.item-our-services__picture {
+    /* flex: 0 0 63px;  - в этом случае не работает. Не понимаю почему картинка не фиксируется размером 63рх (в примере item-our-promise__picture все работает), а здесь картика растягивается, хотя абсолютно аналогичные */
+    width: 63px;
+    height: 63px;
+    align-self: center;
+    margin: 0 0 33px 0;
+    overflow: hidden;
+}
+.item-our-services__img {
+    width: 100%;
+    height: 100%;
+}
+.item-our-services__title {
+    font-weight: 900;
+    font-size: 19px;
+    line-height: 1.37;
+    text-align: center;
+    color: #F2726F;
+    margin: 0 0 20px 0;
+}
+.item-our-services__text {
+    line-height: 1.5;
+    text-align: center;
+    letter-spacing: 0.15px;
+    color: #4B4B4B;
+}
+.our-services__button{
+    padding: 9px 25px;
+}
+.our-services__button-box{
+    text-align: center;
+}
+
+
+/* --------------------------------who-we-are----------------- */
+
+.appointment {
+    background: url(../img/main/appointment/duotone.jpg) 0 0 / cover no-repeat;
+}
+.appointment__container {
+    padding: 130px 0 210px;
+    position: relative;
+}
+.appointment__container::before{
+    content: "";
+    position: absolute;
+    background:  url(../img/icons/appointment/Blob.svg) 20px 0 / cover no-repeat, url(../img/icons/appointment/Stylize.svg) 0 110px / 335px 566px no-repeat;
+    top: 130px;
+    left: -108px;
+    width: 653px;
+    height: 710px;
+    z-index: 1;
+}
+.appointment__row {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 90px;
+    row-gap: 20px;
+    margin: 0-10px;
+    justify-content: space-between;
+}
+.appointment__form {
+    flex: 0 1 585px;
+    padding: 0 10px;
+    background-color: #5D62B5;
+    border-radius: 40px;
+    align-self: flex-start;
+}
+.form-content{
+    padding: 76px 57px;
+    display: flex;
+    flex-direction: column;
+}
+.form-content__title {
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 1.17;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0 0 48px 0;
+}
+/* .form-content__block сделан для визуальной картинки, так как в формы еще качественно не погружалась */
+.form-content__block {
+    border: 1px solid #FFFFFF;
+    border-radius: 10px;
+    margin: 0 0 30px 0;
+    width: 470px;
+    height: 320px;
+}
+.form-content__button {
+    align-self: flex-end;
+}
+
+.appointment__info {
+    padding: 0 10px;
+    align-self: center;
+    justify-content: center;
+    max-width: 344px;
+}
+.appointment__text {
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 1.2;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0 0 34px;
+}
+.appointment__number {
+    font-weight: 900;
+    font-size: 96px;
+    line-height: 0.58;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0 0 34px
+}
+.appointment__subtext {
+    font-weight: 900;
+    font-size: 19px;
+    line-height: 1.37;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+
+/* ------------------- impact  -------------------------*/
+
+.impact {
+    background: #29C3BE;
+}
+.impact__column {
+    padding: 0px 0 212px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 79px;
+    margin: 0 -10px;
+}
+.impact__column::after {
+    content: "";
+    background: url(../img/icons/impact/Blob2.svg) 0 0 no-repeat;
+    position: absolute;
+    width: 700px;
+    height: 500px;
+    top: 0px;
+    right: -90px;
+}
+.impact__box {
+    display: flex;
+    position: relative;
+    z-index: 3;
+    justify-content: space-between;
+    padding: 0 10px;
+    margin: -80px 0 0;
+}
+.impact__block-heading {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 411px;
+    color: #FFFFFF;
+    z-index: 3;
+    align-self: flex-end;
+    padding: 192px 0 0;
+}
+.subtitle_white {
+    position: relative;
+    margin: 0 0 32px 0;
+}
+.subtitle_white::before{
+    content: "";
+    background: url(../img/icons/impact/Mark.svg) 0 0 no-repeat;
+    width: 17px;
+    height: 20px;
+    position: absolute;
+    top:-1px;
+    left: 0;
+}
+.impact__dog-image {
+    border-radius: 40px;
+    width: 498px;
+    height: 315px;
+    overflow: hidden;
+}
+.impact__dog-img {
+    width: 100%;
+    height: 100%;
+}
+.impact__row {
+    padding: 0 10px;
+    margin: 0 -10px;
+}
+.item-impact {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 24px;
+}
+.item-impact__row {
+    padding: 0 10px;
+    display: flex;
+    flex: 0 1 25%;
+    column-gap: 11px;
+}
+.item-impact__picture {
+    flex: 0 0 76px;
+    height: 76px;
+    overflow: hidden;
+}
+.item-impact__img {
+    width: 100%;
+}
+.item-impact__content {
+}
+.item-impact__title {
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 1.17;
+    color: #FFFFFF;
+}
+.item-impact__text {
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.15px;
+    color: #5D62B5;
+}
+
+/* -------------------  sed  -------------------------*/
+
+.sed {
+}
+.sed__container {
+    background: #5D62B5;
+    border-radius: 20px;
+    margin: -72px auto 0px;
+}
+.sed__row {
+    display: flex;
+    padding: 43px 76px 46px 70px;
+    justify-content: space-between;
+    align-items: center;
+}
+.sed__text {
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 1.25;
+    color: #FFFFFF;
+    flex: 0 1 562px;
+}
+
+/* ------------------- footer  -------------------------*/
+.footer {
+}
+
