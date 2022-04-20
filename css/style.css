@@ -581,7 +581,7 @@ body{
 }
 
 
-/* --------------------------------who-we-are----------------- */
+/* ------------------------------ make an appointment ----------------- */
 
 .appointment {
     background: url(../img/main/appointment/duotone.jpg) 0 0 / cover no-repeat;
@@ -605,22 +605,22 @@ body{
     z-index: 2;
     display: flex;
     flex-wrap: wrap;
-    column-gap: 90px;
-    row-gap: 20px;
-    margin: 0-10px;
-    justify-content: space-between;
+    row-gap: 50px;
+    column-gap: 20px;
+    justify-content: center;
+
 }
 .appointment__form {
     flex: 0 1 585px;
-    padding: 0 10px;
     background-color: #5D62B5;
     border-radius: 40px;
-    align-self: flex-start;
 }
 .form-content{
     padding: 76px 57px;
+    flex: 1 1 470px;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .form-content__title {
     font-weight: 900;
@@ -635,11 +635,14 @@ body{
     border: 1px solid #FFFFFF;
     border-radius: 10px;
     margin: 0 0 30px 0;
-    width: 470px;
+    flex: 1 1 100%;    
     height: 320px;
 }
 .form-content__button {
-    align-self: flex-end;
+    flex: 1 1 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 .appointment__info {
